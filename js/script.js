@@ -11,19 +11,23 @@ $("#shoot").click(function() {
 var userChoice= "";
 var computerChoice= "";
 var winner="";
-var randomNumber= Math.random();
+var randomNumber= 0;
+
 $("#shoot").click(function() {
     var userChoice= $("#input").val();
     $("#userChoice").text(userChoice);
-if (randomNumber <.50 ){
+    randomNumber = Math.random();
+    
+if (randomNumber < .33){
     computerChoice ="rock";
 }
-else if (randomNumber >.60 && randomNumber < 1.00){
+else if (randomNumber >.33 && randomNumber < .66){
     computerChoice = "paper";
 }
 else {
-        computerChoice = "scissors"
+        computerChoice = "scissors";
 }
+console.log(computerChoice);
 $("#computerChoice").text(computerChoice);
 });
 
